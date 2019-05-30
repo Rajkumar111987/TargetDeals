@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="deals" type="com.target.dealbrowserpoc.targetdeal.models.DealsList"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:id="@+id/ivProductImage"/>
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:id="@+id/tvSale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivProductImage"
+                    android:textSize="32dp"
+                    android:text="@{deals.salePrice}"
+                    android:visibility="@{deals.salePrice == null ?View.GONE : View.VISIBLE }"
+                    android:textColor="@color/targetred"
+                    tools:text="$9.99"/>
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:id="@+id/tvOrginal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivProductImage"
+                    android:textSize="24dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/targetGreyLine"
+                    tools:text="$9.99"/>
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvOrginal"
+                    android:textSize="24dp"
+                    android:text="@{deals.title}"
+                    android:textColor="@color/targetButtonText"
+                    tools:text="This is Title"/>
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:id="@+id/tvBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTitle"
+                    android:textSize="18dp"
+                    android:textColor="@color/targetButtonText"
+                    android:text="@{deals.description}"
+                    tools:text="This is Body"/>
+            </RelativeLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/llView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/black"
+                android:background="@color/targetbutton"
+                android:text="@string/add_to_list"
+                android:textSize="24sp"
+                android:layout_weight="0.5"
+                android:onClick="showToast"/>
+            <Button
+                android:id="@+id/btCart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/targetred"
+                android:textColor="@color/targetWhite"
+                android:text="@string/add_to_cart"
+                android:textSize="24sp"
+                android:layout_weight="0.5"
+                android:onClick="showToast"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

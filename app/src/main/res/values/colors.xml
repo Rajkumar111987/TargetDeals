@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="targetWhite">#ffffff </color>
+    <color name="targetButtonStroke">#CC888888 </color>
+    <color name="targetButtonText">#2B2928 </color>
+    <color name="targetGreyLine">#8A8582 </color>
+    <color name="targetred">#E50628 </color>
+    <color name="targetbutton">#C9C9C9 </color>
+</resources>
