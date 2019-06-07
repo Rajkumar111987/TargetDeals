@@ -62,11 +62,6 @@ public class DealsAdapter extends RecyclerView.Adapter<DealsAdapter.DealsViewHol
         return mDeals.size();
     }
 
-    public Bitmap getProductImage(int image){
-        Bitmap bmp = BitmapFactory.decodeResource(mContext.getResources(), image);
-        return bmp;
-    }
-
 
     public class DealsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
